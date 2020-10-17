@@ -1,5 +1,7 @@
 // fonts
-$primary-font: 'Merriweather',
-serif;
-$secondary-font: 'Open Sans',
-sans-serif;
+//importing fonts for headings
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+//importing fonts for the body text
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Bebas Neue', cursive;

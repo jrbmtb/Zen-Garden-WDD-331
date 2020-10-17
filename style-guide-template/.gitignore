@@ -2,3 +2,5 @@ node_modules
 *.css
 .cache
 build
+.vscode
+.DS_Store
