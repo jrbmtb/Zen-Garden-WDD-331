@@ -1,0 +1,74 @@
+#css-zen-garden{
+  width: 80%;
+  margin: 0 auto
+}
+
+.page-wrapper{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: repeat(4, auto);
+}
+
+.intro{
+  grid-column: 1/-1;
+  grid-row: 1/ span 2;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(3,auto);
+  grid-template-areas: "banner banner banner banner"
+                        "summary summary . ."
+                        "preamble preamble . .";
+  header{
+    grid-area: banner;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .summary{
+    grid-area: summary;
+  }
+
+  .preamble{
+    grid-area: preamble;
+  }
+}
+
+.main{
+  grid-column: 1/-1;
+  grid-row: 3/ -1;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: repeat(5,auto);
+  grid-template-areas: "explanation ."
+                        "participation ."
+                        "benefits benefits"
+                        "requirements requirements"
+                        "footer footer";
+  .explanation{
+    grid-area: explanation;
+  }
+
+  .participation{
+    grid-area: participation;
+  }
+
+  .benefits{
+    grid-area: benefits;
+  }
+
+  .requirements{
+    grid-area: requirements;
+  }
+
+  footer{
+    grid-area: footer;
+  }
+}
+
+.sidebar{
+  grid-column: 2/-1;
+  grid-row: 3/ 4;
+  display: flex;
+  flex-direction: column;
+}

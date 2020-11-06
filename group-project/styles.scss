@@ -1,0 +1,5 @@
+@import "small";
+
+@media (min-width: 64rem){
+  @import "large";
+}
