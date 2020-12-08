@@ -29,7 +29,19 @@ header h1 {
   padding: 2rem;
   padding-bottom: 1rem;
   font-family: "Press Start 2P", cursive;
-  text-shadow: 0 2px 5px #4cf000;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #4cf000, 0 0 25px #4cf000;
+  }
+  
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 15px #08e2ff, 0 0 20px #08e2ff, 0 0 25px #08e2ff;
+  }
 }
 
 header h2 {
@@ -40,8 +52,15 @@ header h2 {
   margin: 0;
   padding: 2rem;
   padding-top: 1rem;
-  border-top: 2px solid #ff1493;
   font-family: "Press Start 2P", cursive;
+  animation: slide 5s linear infinite;
+}
+
+@keyframes slide {
+  0% { transform: translate(0,0); }
+  5% { transform: translate(0,0); }
+  25% { transform: translate(5%,0%); }
+  50% { transform: translate(-5%,0%); }
 }
 
 /*---- Apply to all the subheadings ----*/
@@ -59,8 +78,8 @@ h3 {
 .requirements,
 footer,
 .sidebar {
-  margin: 0;
   padding: 1rem;
+  margin-top: 20px;
 }
 
 /*------- Apply to all the links -------*/
@@ -74,8 +93,12 @@ a:hover {
 }
 
 /*------------ Summary Rules -----------*/
-.summary {
-  background-color: #dc143c;
+.summary,
+.explanation,
+.benefits {
+  background-color: #14bedc;
+  border: 10px #00eeff;
+  border-style: outset;
 }
 
 /*--- Intercalete background colors ----*/
@@ -83,11 +106,8 @@ a:hover {
 .participation,
 .requirements {
   background-color: #a8a0a0;
-}
-
-.explanation,
-.benefits {
-  background-color: #5f9ea0;
+  border: 10px #7f8383;
+  border-style: outset;
 }
 
 /*------------ Footer Rules ------------*/
@@ -95,6 +115,36 @@ footer {
   font-size: 1rem;
   text-align: center;
   background-color: #dc143c;
+}
+
+footer a {
+  padding: 1rem;
+  margin-right: 5px;
+}
+
+a.zen-validate-html:hover {
+  background-color: #14bedc;
+  color: #000;
+}
+
+a.zen-validate-css:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+a.zen-license:hover {
+  background-color: #e0dd0f;
+  color: #000;
+}
+
+a.zen-accessibility:hover {
+  background-color: #0fe00f;
+  color: #000;
+}
+
+a.zen-github:hover {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
 }
 
 /*----------- Sidebar Rules ------------*/
