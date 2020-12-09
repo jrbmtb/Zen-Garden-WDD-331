@@ -17,31 +17,27 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #000;
 }
 
 /*------------ Header Rules ------------*/
 header h1 {
   font-size: 3rem;
   text-align: center;
-  background-color: #000000;
+  background-color: #808080;
   margin: 0;
   padding: 2rem;
-  padding-bottom: 1rem;
   font-family: "Press Start 2P", cursive;
-  text-shadow: 0 2px 5px #4cf000;
+  text-shadow: 0 3px 5px #4cf000;
 }
 
 header h2 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-align: center;
   background-color: #000000;
   color: #4cf000;
   margin: 0;
   padding: 2rem;
-  padding-top: 1rem;
-  border-top: 2px solid #ff1493;
-  font-family: "Press Start 2P", cursive;
+  font-family: "Share Tech Mono", monospace;
 }
 
 /*---- Apply to all the subheadings ----*/
@@ -107,12 +103,13 @@ footer {
   #css-zen-garden {
     width: 80%;
     margin: 0 auto;
+    background: #222;
   }
 
   .page-wrapper {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(5, 12em);
   }
 
   .intro {
@@ -120,8 +117,8 @@ footer {
     grid-row: 1/span 2;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: "banner banner banner banner" "summary summary . ." "preamble preamble . .";
+    grid-template-rows: 12em 12em 24em;
+    grid-template-areas: "banner banner banner banner" "summary summary summary ." "preamble preamble . .";
   }
   .intro header {
     grid-area: banner;
@@ -131,9 +128,27 @@ footer {
   }
   .intro .summary {
     grid-area: summary;
+    position: relative;
+    padding-right: 25em;
+  }
+  .intro .summary::after {
+    content: "";
+    display: block;
+    background-image: url("https://cdn.pressstart.com.au/wp-content/uploads/2020/12/Cyberpunk-2077-Review-770x433.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 390px;
+    height: 192px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
   }
   .intro .preamble {
     grid-area: preamble;
+  }
+  .intro p {
+    padding: 0 0.8em;
   }
 
   .main {
@@ -159,10 +174,16 @@ footer {
   .main footer {
     grid-area: footer;
   }
+  .main h3 {
+    margin: 0.5em 0 0.5em 0.5em;
+  }
+  .main p {
+    padding: 0 0.8em;
+  }
 
   .sidebar {
     grid-column: 2/-1;
-    grid-row: 3/4;
+    grid-row: 2/-1;
     display: flex;
     flex-direction: column;
   }
