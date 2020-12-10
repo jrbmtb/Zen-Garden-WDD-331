@@ -1,7 +1,7 @@
 #css-zen-garden{
   width: 80%;
   margin: 0 auto;
-  background: #222;
+  background: #000;
 }
 
 .page-wrapper{
@@ -40,7 +40,7 @@
     background-position: center;
     background-size: cover;
     width: 340px;
-    height: 162px;
+    height: 150px;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -48,7 +48,9 @@
 
   .preamble{
     grid-area: preamble;
+    display: none;
   }
+
   p{
     padding: 0 .8em;
   }

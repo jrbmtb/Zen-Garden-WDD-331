@@ -162,7 +162,7 @@ a.zen-github:hover {
   #css-zen-garden {
     width: 80%;
     margin: 0 auto;
-    background: #222;
+    background: #000;
   }
 
   .page-wrapper {
@@ -198,13 +198,14 @@ a.zen-github:hover {
     background-position: center;
     background-size: cover;
     width: 340px;
-    height: 162px;
+    height: 150px;
     position: absolute;
     top: 0px;
     right: 0px;
   }
   .intro .preamble {
     grid-area: preamble;
+    display: none;
   }
   .intro p {
     padding: 0 0.8em;
