@@ -17,7 +17,7 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #000;
+  background-color: #000000;
 }
 
 /*------------ Header Rules ------------*/
@@ -38,12 +38,10 @@ header h1 {
   from {
     text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #4cf000, 0 0 25px #4cf000;
   }
-  
   to {
     text-shadow: 0 0 10px #fff, 0 0 15px #08e2ff, 0 0 20px #08e2ff, 0 0 25px #08e2ff;
   }
 }
-
 header h2 {
   font-size: 1rem;
   text-align: center;
@@ -57,12 +55,19 @@ header h2 {
 }
 
 @keyframes slide {
-  0% { transform: translate(0,0); }
-  5% { transform: translate(0,0); }
-  25% { transform: translate(5%,0%); }
-  50% { transform: translate(-5%,0%); }
+  0% {
+    transform: translate(0, 0);
+  }
+  5% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5%, 0%);
+  }
+  50% {
+    transform: translate(-5%, 0%);
+  }
 }
-
 /*---- Apply to all the subheadings ----*/
 h3 {
   font-size: 1.5rem;
@@ -144,7 +149,7 @@ a.zen-accessibility:hover {
 
 a.zen-github:hover {
   background-color: #000000;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
 /*----------- Sidebar Rules ------------*/
@@ -157,12 +162,13 @@ a.zen-github:hover {
   #css-zen-garden {
     width: 80%;
     margin: 0 auto;
+    background: #222;
   }
 
   .page-wrapper {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(5, 12em);
   }
 
   .intro {
@@ -170,8 +176,8 @@ a.zen-github:hover {
     grid-row: 1/span 2;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: "banner banner banner banner" "summary summary . ." "preamble preamble . .";
+    grid-template-rows: 12em 12em 24em;
+    grid-template-areas: "banner banner banner banner" "summary summary summary ." "preamble preamble . .";
   }
   .intro header {
     grid-area: banner;
@@ -181,9 +187,27 @@ a.zen-github:hover {
   }
   .intro .summary {
     grid-area: summary;
+    position: relative;
+    padding-right: 25em;
+  }
+  .intro .summary::after {
+    content: "";
+    display: block;
+    background-image: url("https://cdn.pressstart.com.au/wp-content/uploads/2020/12/Cyberpunk-2077-Review-770x433.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 340px;
+    height: 162px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
   }
   .intro .preamble {
     grid-area: preamble;
+  }
+  .intro p {
+    padding: 0 0.8em;
   }
 
   .main {
@@ -209,10 +233,16 @@ a.zen-github:hover {
   .main footer {
     grid-area: footer;
   }
+  .main h3 {
+    margin: 0.5em 0 0.5em 0.5em;
+  }
+  .main p {
+    padding: 0 0.8em;
+  }
 
   .sidebar {
     grid-column: 2/-1;
-    grid-row: 3/4;
+    grid-row: 2/-1;
     display: flex;
     flex-direction: column;
   }

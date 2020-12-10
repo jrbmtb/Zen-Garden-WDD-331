@@ -1,12 +1,13 @@
 #css-zen-garden{
   width: 80%;
-  margin: 0 auto
+  margin: 0 auto;
+  background: #222;
 }
 
 .page-wrapper{
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: repeat(5, 12em);
 }
 
 .intro{
@@ -14,9 +15,9 @@
   grid-row: 1/ span 2;
   display: grid;
   grid-template-columns: repeat(4,1fr);
-  grid-template-rows: repeat(3,auto);
+  grid-template-rows: 12em 12em 24em;
   grid-template-areas: "banner banner banner banner"
-                        "summary summary . ."
+                        "summary summary summary ."
                         "preamble preamble . .";
   header{
     grid-area: banner;
@@ -27,10 +28,29 @@
 
   .summary{
     grid-area: summary;
+    position: relative;
+    padding-right: 25em;
+  }
+
+  .summary::after{
+    content: "";
+    display: block;
+    background-image: url("https://cdn.pressstart.com.au/wp-content/uploads/2020/12/Cyberpunk-2077-Review-770x433.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 390px;
+    height: 192px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
   }
 
   .preamble{
     grid-area: preamble;
+  }
+  p{
+    padding: 0 .8em;
   }
 }
 
@@ -64,11 +84,19 @@
   footer{
     grid-area: footer;
   }
+
+  h3{
+    margin: .5em 0 .5em .5em;
+  }
+
+  p{
+    padding: 0 .8em;
+  }
 }
 
 .sidebar{
   grid-column: 2/-1;
-  grid-row: 3/ 4;
+  grid-row: 2/ -1;
   display: flex;
   flex-direction: column;
 }
